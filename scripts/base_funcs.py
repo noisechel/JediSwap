@@ -17,7 +17,7 @@ async def print_transaction_execution_details(current_client, tx_hash):
     print(f"transaction_details: execution_resources: {tx_details.execution_resources}, actual_fee: {tx_details.actual_fee}")
     block_details = await current_client.get_block(block_number=tx_details.block_number)
     print(f"gas price: {block_details.gas_price}")
-    cairo_usage = []
+    cairo_usage = [q]
     execution_resources = tx_details.execution_resources
     cairo_resource_fee_weights = {"n_steps": 0.05, "pedersen_builtin": 0.4, "range_check_builtin": 0.4, "ecdsa_builtin": 25.6, "bitwise_builtin": 12.8}
     execution_resources_gas_usages = {
